@@ -37,6 +37,10 @@ type WorkSheet struct {
 	rightToLeft bool
 }
 
+func (w *WorkSheet) Rows() map[uint16]*Row {
+	return w.rows
+}
+
 func (w *WorkSheet) Row(i int) *Row {
 	row := w.rows[uint16(i)]
 	if row != nil {
